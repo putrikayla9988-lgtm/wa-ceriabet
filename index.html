@@ -1,422 +1,229 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pelayanan Ceriabet</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pelayanan CERIABET</title>
 
-    :root {
-      --gold-1: #ffd54f;
-      --gold-2: #b8860b;
-      --purple-1: #1f0f35;
-      --purple-2: #321454;
-      --purple-3: #4f1f7d;
-      --white: #ffffff;
-      --text-soft: rgba(255,255,255,0.82);
-      --line: rgba(255,255,255,0.12);
-      --card: rgba(20, 10, 35, 0.82);
-      --input: rgba(255,255,255,0.06);
-      --green: #25d366;
-      --danger: #ff7b7b;
-    }
+<style>
+*{box-sizing:border-box}
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--white);
-      background:
-        linear-gradient(rgba(20, 10, 35, 0.72), rgba(20, 10, 35, 0.88)),
-        url("https://plcl.me/images/wap3j.jpg") center/cover no-repeat fixed;
-      min-height: 100vh;
-      padding: 20px 12px;
-    }
+:root{
+--gold:#ffd54f;
+--purple:#2a0a4a;
+--purple2:#4f1f7d;
+--card:rgba(20,10,35,.82);
+--line:rgba(255,255,255,.12);
+--textsoft:rgba(255,255,255,.82);
+}
 
-    .wrap {
-      max-width: 560px;
-      margin: 0 auto;
-    }
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+color:#fff;
+background:
+linear-gradient(rgba(20,10,35,.75),rgba(20,10,35,.9)),
+url("https://plcl.me/images/wap3j.jpg") center/cover no-repeat fixed;
+padding:20px 12px;
+min-height:100vh;
+}
 
-    .card {
-      background: var(--card);
-      border: 1px solid rgba(255, 213, 79, 0.14);
-      border-radius: 22px;
-      padding: 20px;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.35);
-      backdrop-filter: blur(8px);
-    }
+.wrap{max-width:560px;margin:auto}
 
-    .top {
-      text-align: center;
-      margin-bottom: 18px;
-    }
+.card{
+background:var(--card);
+border:1px solid rgba(255,213,79,.15);
+border-radius:22px;
+padding:20px;
+box-shadow:0 18px 45px rgba(0,0,0,.35);
+backdrop-filter:blur(8px);
+}
 
-    .logo {
-      max-width: 180px;
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto 14px;
-    }
+.top{text-align:center;margin-bottom:18px}
 
-    .title {
-      margin: 0 0 8px;
-      font-size: 26px;
-      line-height: 1.2;
-      font-weight: 800;
-    }
+.logo{max-width:180px;margin:auto;display:block}
 
-    .title .gold {
-      background: linear-gradient(180deg, #fff2b0 0%, #ffd54f 45%, #b8860b 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      color: transparent;
-    }
+.title{font-size:26px;font-weight:800;margin:10px 0}
 
-    .desc {
-      margin: 0 auto;
-      max-width: 470px;
-      font-size: 14px;
-      line-height: 1.7;
-      color: var(--text-soft);
-    }
+.title span{
+background:linear-gradient(180deg,#fff2b0 0%,#ffd54f 45%,#b8860b 100%);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
 
-    .link-box,
-    .banner-box,
-    .form-box,
-    .note-box {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px;
-      margin-top: 14px;
-    }
+.desc{font-size:14px;color:var(--textsoft)}
 
-    .section-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--gold-1);
-      margin-bottom: 10px;
-      letter-spacing: 0.3px;
-    }
+.box{
+background:rgba(255,255,255,.04);
+border:1px solid var(--line);
+border-radius:16px;
+padding:16px;
+margin-top:14px;
+}
 
-    .login-btn {
-      display: inline-block;
-      width: 100%;
-      text-align: center;
-      text-decoration: none;
-      color: #fff;
-      font-weight: 700;
-      padding: 13px 16px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, rgba(123,44,191,0.7), rgba(255,213,79,0.18));
-      border: 1px solid rgba(255, 213, 79, 0.18);
-    }
+.section{font-size:13px;font-weight:700;color:var(--gold);margin-bottom:10px}
 
-    .banner {
-      width: 100%;
-      display: block;
-      border-radius: 12px;
-    }
+.login{
+display:block;
+text-align:center;
+padding:13px;
+border-radius:12px;
+background:linear-gradient(135deg,#7b2cbf,#ffd54f);
+color:#fff;
+font-weight:700;
+text-decoration:none;
+}
 
-    .form-group {
-      margin-bottom: 14px;
-    }
+.banner{width:100%;border-radius:12px}
 
-    .label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #fff;
-    }
+.form-group{margin-bottom:14px}
 
-    .required {
-      color: var(--danger);
-      margin-right: 4px;
-    }
+.label{font-weight:700;font-size:14px;margin-bottom:6px;display:block}
 
-    input[type="text"],
-    input[type="tel"],
-    textarea {
-      width: 100%;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: var(--input);
-      color: #fff;
-      border-radius: 12px;
-      padding: 13px 14px;
-      font-size: 14px;
-      outline: none;
-      transition: 0.2s ease;
-    }
+input,textarea{
+width:100%;
+padding:13px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,.12);
+background:rgba(255,255,255,.06);
+color:#fff;
+}
 
-    textarea {
-      min-height: 95px;
-      resize: vertical;
-    }
+textarea{min-height:95px}
 
-    input::placeholder,
-    textarea::placeholder {
-      color: rgba(255,255,255,0.5);
-    }
+.option-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
 
-    input:focus,
-    textarea:focus {
-      border-color: rgba(255,213,79,0.55);
-      box-shadow: 0 0 0 3px rgba(255,213,79,0.10);
-    }
+.option input{display:none}
 
-    .option-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
+.option label{
+display:block;
+padding:12px;
+text-align:center;
+border-radius:12px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.1);
+cursor:pointer;
+font-weight:700;
+}
 
-    .option {
-      position: relative;
-    }
+.option input:checked+label{
+background:linear-gradient(135deg,#7b2cbf,#ffd54f);
+color:#fff;
+border-color:#ffd54f;
+}
 
-    .option input {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
+.action{margin-top:18px}
 
-    .option label {
-      display: block;
-      padding: 12px;
-      text-align: center;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.10);
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
+.wa{
+width:100%;
+border:none;
+border-radius:14px;
+padding:15px;
+font-size:15px;
+font-weight:800;
+background:linear-gradient(135deg,#25d366,#1ea851);
+color:#fff;
+cursor:pointer;
+}
 
-    .option input:checked + label {
-      border-color: rgba(255,213,79,0.52);
-      color: var(--gold-1);
-      background: linear-gradient(135deg, rgba(123,44,191,0.35), rgba(255,213,79,0.10));
-    }
+.error{font-size:12px;color:#ff9c9c;display:none;margin-top:5px}
 
-    .helper {
-      margin-top: 8px;
-      font-size: 12px;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.72);
-    }
-
-    .error {
-      display: none;
-      margin-top: 6px;
-      font-size: 12px;
-      color: #ff9c9c;
-    }
-
-    .action {
-      margin-top: 16px;
-    }
-
-    .wa-btn {
-      width: 100%;
-      border: none;
-      cursor: pointer;
-      border-radius: 14px;
-      min-height: 50px;
-      padding: 0 18px;
-      color: #fff;
-      font-size: 15px;
-      font-weight: 800;
-      background: linear-gradient(135deg, #25d366, #1ea851);
-      box-shadow: 0 14px 28px rgba(37,211,102,0.24);
-    }
-
-    .note-box ul {
-      margin: 8px 0 0;
-      padding-left: 18px;
-      color: var(--text-soft);
-      font-size: 13px;
-      line-height: 1.7;
-    }
-
-    @media (max-width: 520px) {
-      .title {
-        font-size: 22px;
-      }
-
-      .option-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .card {
-        padding: 16px;
-      }
-    }
-  </style>
+@media(max-width:520px){
+.option-grid{grid-template-columns:1fr}
+.title{font-size:22px}
+}
+</style>
 </head>
+
 <body>
-  <div class="wrap">
-    <div class="card">
-      <div class="top">
-        <img
-          class="logo"
-          src="https://api2-crb.imgnxb.com/images/pod13iqh6ae/logo_96c00afb-2339-4071-aabc-5685e6905423_1774338374600.gif"
-          alt="Logo Ceriabet"
-        />
-        <h1 class="title">Pelayanan <span class="gold">Resmi Ceriabet</span></h1>
-        <p class="desc">
-          Isi data Anda dengan benar agar tim kami dapat membantu kendala dengan lebih cepat dan tepat.
-        </p>
-      </div>
+<div class="wrap">
+<div class="card">
 
-      <div class="link-box">
-        <div class="section-title">LINK LOGIN RESMI</div>
-        <a class="login-btn" href="https://access.vpnceria.life/ceriabet-login" target="_blank">
-          Klik di sini untuk login CERIABET
-        </a>
-      </div>
+<div class="top">
+<img class="logo"
+src="https://api2-crb.imgnxb.com/images/pod13iqh6ae/logo_96c00afb-2339-4071-aabc-5685e6905423_1774338374600.gif">
+<h1 class="title">Pelayanan <span>Resmi CERIABET</span></h1>
+<p class="desc">Isi data Anda dengan benar agar tim kami dapat membantu lebih cepat.</p>
+</div>
 
-      <div class="banner-box">
-        <img
-          class="banner"
-          src="https://api2-crb.imgnxb.com/images/pod13iqh6ae/id_cbd_fbce1119-0389-4005-a738-f00d1eade904_1774074651790.jpg"
-          alt="Banner Ceriabet"
-        />
-      </div>
+<div class="box">
+<div class="section">LINK LOGIN RESMI</div>
+<a class="login" href="https://access.vpnceria.life/ceriabet-login" target="_blank">
+Klik di sini untuk login CERIABET
+</a>
+</div>
 
-      <div class="form-box">
-        <div class="section-title">FORM BANTUAN MEMBER</div>
+<div class="box">
+<img class="banner"
+src="https://api2-crb.imgnxb.com/images/pod13iqh6ae/id_cbd_fbce1119-0389-4005-a738-f00d1eade904_1774074651790.jpg">
+</div>
 
-        <div class="form-group">
-          <label class="label" for="userId"><span class="required">*</span>User ID</label>
-          <input type="text" id="userId" placeholder="Masukkan User ID Anda">
-          <div class="error" id="userIdError">User ID wajib diisi.</div>
-        </div>
+<div class="box">
+<div class="section">FORM BANTUAN MEMBER</div>
 
-        <div class="form-group">
-          <label class="label" for="phone">Nomor HP aktif</label>
-          <input type="tel" id="phone" placeholder="Masukkan nomor HP yang bisa dihubungi">
-        </div>
+<div class="form-group">
+<label class="label">User ID</label>
+<input type="text" id="userId" placeholder="Masukkan User ID Anda">
+<div class="error" id="userErr">User ID wajib diisi</div>
+</div>
 
-        <div class="form-group">
-          <label class="label"><span class="required">*</span>Pilih kendala</label>
-          <div class="option-grid">
-            <div class="option">
-              <input type="checkbox" id="deposit" name="keluhan" value="Deposit">
-              <label for="deposit">Deposit</label>
-            </div>
-            <div class="option">
-              <input type="checkbox" id="withdraw" name="keluhan" value="Withdraw">
-              <label for="withdraw">Withdraw</label>
-            </div>
-            <div class="option">
-              <input type="checkbox" id="lupaPassword" name="keluhan" value="Lupa Password">
-              <label for="lupaPassword">Lupa Password</label>
-            </div>
-            <div class="option">
-              <input type="checkbox" id="lainnya" name="keluhan" value="Keluhan Lainnya">
-              <label for="lainnya">Keluhan Lainnya</label>
-            </div>
-          </div>
-          <div class="error" id="keluhanError">Pilih minimal 1 kendala.</div>
-          <div class="helper">
-            Pilih kendala sesuai kebutuhan agar pesan Anda lebih mudah diproses.
-          </div>
-        </div>
+<div class="form-group">
+<label class="label">Pilih Kendala</label>
+<div class="option-grid">
+<div class="option"><input type="checkbox" id="d" value="Deposit"><label for="d">Deposit</label></div>
+<div class="option"><input type="checkbox" id="w" value="Withdraw"><label for="w">Withdraw</label></div>
+<div class="option"><input type="checkbox" id="l" value="Lupa Password"><label for="l">Lupa Password</label></div>
+<div class="option"><input type="checkbox" id="k" value="Keluhan Lainnya"><label for="k">Keluhan Lainnya</label></div>
+</div>
+<div class="error" id="kelErr">Pilih minimal 1 kendala</div>
+</div>
 
-        <div class="form-group">
-          <label class="label" for="detail">Detail kendala</label>
-          <textarea id="detail" placeholder="Tuliskan kendala Anda di sini"></textarea>
-        </div>
+<div class="form-group">
+<label class="label">Detail Kendala</label>
+<textarea id="detail" placeholder="Tuliskan kendala Anda"></textarea>
+</div>
 
-        <div class="action">
-          <button type="button" class="wa-btn" id="sendBtn">Kirim ke WhatsApp</button>
-        </div>
-      </div>
+<div class="action">
+<button class="wa" id="send">Kirim ke WhatsApp</button>
+</div>
 
-      <div class="note-box">
-        <div class="section-title">CATATAN</div>
-        <ul>
-          <li>Pastikan User ID sudah benar sebelum mengirim.</li>
-          <li>Gunakan nomor aktif agar tim kami lebih mudah menghubungi Anda.</li>
-          <li>Mohon gunakan bahasa yang sopan ya kak 🙏 Kami di sini untuk membantu sebaik mungkin ❤️</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
 
 <script>
-  const WA_NUMBER = "19036514817";
-  const LOGIN_LINK = "https://access.vpnceria.life/ceriabet-login";
+const WA="19036514817"
+const LOGIN="https://access.vpnceria.life/ceriabet-login"
 
-  function getCheckedKeluhan() {
-    const checked = document.querySelectorAll('input[name="keluhan"]:checked');
-    return Array.from(checked).map(item => item.value);
-  }
+document.getElementById("send").onclick=function(){
 
-  function validateForm() {
-    const userId = document.getElementById("userId").value.trim();
-    const keluhan = getCheckedKeluhan();
+const id=document.getElementById("userId").value.trim()
+const detail=document.getElementById("detail").value.trim()
+const cek=[...document.querySelectorAll('.option input:checked')].map(e=>e.value)
 
-    const userIdError = document.getElementById("userIdError");
-    const keluhanError = document.getElementById("keluhanError");
+document.getElementById("userErr").style.display=id?"none":"block"
+document.getElementById("kelErr").style.display=cek.length?"none":"block"
 
-    let valid = true;
+if(!id||!cek.length)return
 
-    if (!userId) {
-      userIdError.style.display = "block";
-      valid = false;
-    } else {
-      userIdError.style.display = "none";
-    }
+const msg=`Halo Admin CERIABET 👋
 
-    if (keluhan.length === 0) {
-      keluhanError.style.display = "block";
-      valid = false;
-    } else {
-      keluhanError.style.display = "none";
-    }
+User ID: ${id}
+Kendala: ${cek.join(", ")}
+Detail: ${detail||"-"}
 
-    return valid;
-  }
+Link Login:
+${LOGIN}
 
-  document.getElementById("sendBtn").addEventListener("click", function () {
-    if (!validateForm()) return;
+Mohon dibantu ya kak 🙏`
 
-    const userId = document.getElementById("userId").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const detail = document.getElementById("detail").value.trim();
-    const keluhan = getCheckedKeluhan();
-
-    const message =
-`Halo Admin CERIABET 👋
-
-Saya ingin meminta bantuan dengan data berikut:
-
-User ID: ${userId}
-Nomor HP: ${phone || "-"}
-Kendala: ${keluhan.join(", ")}
-Detail: ${detail || "-"}
-
-Link Login Resmi:
-${LOGIN_LINK}
-
-Mohon dibantu ya kak, terima kasih 🙏`;
-
-    const finalUrl = `https://api.whatsapp.com/send?phone=${WA_NUMBER}&text=${encodeURIComponent(message)}`;
-
-    try {
-      window.top.location.href = finalUrl;
-    } catch (e) {
-      window.location.href = finalUrl;
-    }
-  });
+location.href=`https://api.whatsapp.com/send?phone=${WA}&text=${encodeURIComponent(msg)}`
+}
 </script>
+
 </body>
 </html>
