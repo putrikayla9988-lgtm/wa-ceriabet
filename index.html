@@ -1,237 +1,752 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Pelayanan CERIABET</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kupon Deposit Ceria</title>
 
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Pelayanan CERIABET</title>
-
-<!-- ICON TAB -->
-<link rel="icon" type="image/png" href="https://plcl.me/images/2jMp9.png">
-<link rel="shortcut icon" href="https://plcl.me/images/2jMp9.png">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
-
 :root{
---gold:#ffd54f;
---purple:#2a0a4a;
---purple2:#4f1f7d;
---card:rgba(20,10,35,.82);
---line:rgba(255,255,255,.12);
---textsoft:rgba(255,255,255,.82);
+  --bg:#080210;
+  --card:#17082b;
+  --card2:#241042;
+  --purple:#8b5cf6;
+  --purple2:#a855f7;
+  --soft:#c4b5fd;
+  --text:#fff;
+  --muted:#bda8ff;
+  --gold:#facc15;
+  --green:#22c55e;
+  --red:#ef4444;
 }
+
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-color:#fff;
-background:
-linear-gradient(rgba(20,10,35,.75),rgba(20,10,35,.9)),
-url("https://plcl.me/images/wap3j.jpg") center/cover no-repeat fixed;
-padding:20px 12px;
-min-height:100vh;
+  min-height:100vh;
+  font-family:Poppins,Arial,sans-serif;
+  color:var(--text);
+  background:
+    linear-gradient(rgba(8,2,16,.88),rgba(8,2,16,.92)),
+    url('https://plcl.me/images/wap3j.jpg') center/cover fixed no-repeat;
 }
 
-.wrap{max-width:560px;margin:auto}
+.wrap{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  padding:24px 14px;
+}
+
+.app{
+  width:100%;
+  max-width:520px;
+}
+
+.header{
+  text-align:center;
+  margin-bottom:18px;
+}
+
+.badge-title{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 26px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#7c3aed,#a855f7);
+  color:white;
+  font-family:Orbitron,sans-serif;
+  font-size:21px;
+  font-weight:900;
+  letter-spacing:1.5px;
+  box-shadow:0 0 30px rgba(168,85,247,.55);
+}
+
+.subtitle{
+  margin-top:12px;
+  color:var(--soft);
+  font-size:12px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
 
 .card{
-background:var(--card);
-border:1px solid rgba(255,213,79,.15);
-border-radius:22px;
-padding:20px;
-box-shadow:0 18px 45px rgba(0,0,0,.35);
-backdrop-filter:blur(8px);
+  background:rgba(23,8,43,.88);
+  border:1px solid rgba(168,85,247,.45);
+  border-radius:24px;
+  padding:26px;
+  box-shadow:0 0 25px rgba(124,58,237,.35);
+  backdrop-filter:blur(16px);
 }
-
-.top{text-align:center;margin-bottom:18px}
-
-.logo{max-width:180px;margin:auto;display:block}
-
-.title{font-size:26px;font-weight:800;margin:10px 0}
-
-.title span{
-background:linear-gradient(180deg,#fff2b0 0%,#ffd54f 45%,#b8860b 100%);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.desc{font-size:14px;color:var(--textsoft)}
-
-.box{
-background:rgba(255,255,255,.04);
-border:1px solid var(--line);
-border-radius:16px;
-padding:16px;
-margin-top:14px;
-}
-
-.section{font-size:13px;font-weight:700;color:var(--gold);margin-bottom:10px}
 
 .login{
-display:block;
-text-align:center;
-padding:13px;
-border-radius:12px;
-background:linear-gradient(135deg,#7b2cbf,#ffd54f);
-color:#fff;
-font-weight:700;
-text-decoration:none;
+  text-align:center;
 }
 
-.banner{width:100%;border-radius:12px}
-
-.form-group{margin-bottom:14px}
-
-.label{font-weight:700;font-size:14px;margin-bottom:6px;display:block}
-
-input,textarea{
-width:100%;
-padding:13px;
-border-radius:12px;
-border:1px solid rgba(255,255,255,.12);
-background:rgba(255,255,255,.06);
-color:#fff;
+.icon-round{
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 18px;
+  background:linear-gradient(135deg,#7c3aed,#a855f7);
+  font-size:32px;
+  box-shadow:0 0 25px rgba(168,85,247,.5);
 }
 
-textarea{min-height:95px}
-
-.option-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
+.title{
+  font-family:Orbitron,sans-serif;
+  font-size:22px;
+  font-weight:800;
+  margin-bottom:8px;
 }
 
-.option input{display:none}
-
-.option label{
-display:block;
-padding:12px;
-text-align:center;
-border-radius:12px;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.1);
-cursor:pointer;
-font-weight:700;
+.desc{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:18px;
 }
 
-.option input:checked+label{
-background:linear-gradient(135deg,#7b2cbf,#ffd54f);
-color:#fff;
-border-color:#ffd54f;
+input{
+  width:100%;
+  border:none;
+  outline:none;
+  padding:15px 16px;
+  border-radius:16px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(196,181,253,.25);
+  color:white;
+  font-size:15px;
+  margin-bottom:14px;
 }
 
-.action{margin-top:18px}
+input::placeholder{color:#9f86d8}
 
-.wa{
-width:100%;
-border:none;
-border-radius:14px;
-padding:15px;
-font-size:15px;
-font-weight:800;
-background:linear-gradient(135deg,#25d366,#1ea851);
-color:#fff;
-cursor:pointer;
+button{
+  border:none;
+  cursor:pointer;
+  font-family:Poppins,sans-serif;
 }
 
-.error{font-size:12px;color:#ff9c9c;display:none;margin-top:5px}
+.btn-main{
+  width:100%;
+  padding:15px 18px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#7c3aed,#a855f7);
+  color:white;
+  font-weight:800;
+  font-size:15px;
+  box-shadow:0 0 20px rgba(168,85,247,.45);
+}
 
-@media(max-width:520px){
-.option-grid{grid-template-columns:1fr}
-.title{font-size:22px}
+.btn-main:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+}
+
+.dashboard{display:none}
+
+.userbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding-bottom:18px;
+  margin-bottom:18px;
+  border-bottom:1px solid rgba(196,181,253,.18);
+}
+
+.userleft{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.avatar{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#7c3aed,#a855f7);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+}
+
+.member-name{
+  font-family:Orbitron,sans-serif;
+  font-weight:800;
+  font-size:16px;
+}
+
+.member-id{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.logout{
+  padding:9px 13px;
+  border-radius:12px;
+  background:rgba(239,68,68,.14);
+  color:#ff8181;
+  border:1px solid rgba(239,68,68,.35);
+  font-weight:700;
+}
+
+.point-card{
+  text-align:center;
+  padding:28px 18px;
+  border-radius:20px;
+  background:linear-gradient(135deg,rgba(124,58,237,.28),rgba(168,85,247,.18));
+  border:1px solid rgba(196,181,253,.28);
+  margin-bottom:22px;
+}
+
+.point-label{
+  color:var(--muted);
+  font-size:12px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+
+.point-value{
+  font-family:Orbitron,sans-serif;
+  font-size:54px;
+  font-weight:900;
+  color:#d8c7ff;
+  margin-top:8px;
+}
+
+.point-unit{
+  color:var(--soft);
+  font-size:13px;
+}
+
+.section-head{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:15px;
+}
+
+.gift{
+  width:38px;
+  height:38px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#7c3aed,#a855f7);
+}
+
+.section-title{
+  font-family:Orbitron,sans-serif;
+  font-size:15px;
+  font-weight:900;
+}
+
+.section-desc{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.claim-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.claim-row{
+  display:grid;
+  grid-template-columns:1fr auto auto;
+  align-items:center;
+  gap:10px;
+  padding:13px;
+  border-radius:14px;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(196,181,253,.14);
+}
+
+.claim-row.active{
+  background:linear-gradient(90deg,rgba(34,197,94,.16),rgba(124,58,237,.16));
+  border-color:rgba(34,197,94,.45);
+}
+
+.claim-row.locked{
+  opacity:.58;
+}
+
+.kupon-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:rgba(124,58,237,.35);
+  padding:6px 12px;
+  border-radius:999px;
+  color:white;
+  font-weight:900;
+  font-size:12px;
+}
+
+.bonus{
+  font-weight:900;
+  color:#d8c7ff;
+  white-space:nowrap;
+  font-size:13px;
+}
+
+.btn-claim{
+  padding:9px 12px;
+  border-radius:11px;
+  font-weight:900;
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  color:white;
+  min-width:78px;
+}
+
+.btn-claim.locked{
+  background:rgba(255,255,255,.08);
+  color:#b7a6dd;
+  cursor:not-allowed;
+}
+
+.terms{
+  margin-top:24px;
+  padding:18px;
+  border-radius:18px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(196,181,253,.16);
+}
+
+.terms h3{
+  font-size:14px;
+  color:#7dd3fc;
+  margin-bottom:10px;
+}
+
+.terms ul{
+  padding-left:18px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.8;
+}
+
+.note{
+  margin-top:12px;
+  padding:11px;
+  border-radius:12px;
+  background:rgba(245,158,11,.12);
+  color:#fbbf24;
+  font-size:12px;
+}
+
+.copybox{
+  display:none;
+  margin-top:16px;
+  padding:14px;
+  border-radius:14px;
+  background:rgba(34,197,94,.12);
+  border:1px solid rgba(34,197,94,.35);
+  color:#d1fae5;
+  font-size:12px;
+  white-space:pre-line;
+}
+
+.toast{
+  position:fixed;
+  top:18px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#211039;
+  border:1px solid rgba(196,181,253,.35);
+  color:white;
+  padding:12px 18px;
+  border-radius:14px;
+  font-size:13px;
+  z-index:9999;
+  box-shadow:0 0 22px rgba(0,0,0,.45);
+  display:none;
+  max-width:92%;
+  text-align:center;
+}
+
+.footer{
+  text-align:center;
+  margin-top:16px;
+  color:var(--muted);
+  font-size:11px;
+  opacity:.8;
+}
+
+@media(min-width:900px){
+  .app{
+    max-width:620px;
+  }
+
+  .card{
+    padding:34px;
+  }
+
+  .badge-title{
+    font-size:24px;
+  }
+
+  .claim-row{
+    grid-template-columns:1.1fr 1fr auto;
+    padding:15px;
+  }
+}
+
+@media(max-width:480px){
+  .wrap{
+    padding:12px 9px;
+  }
+
+  .card{
+    padding:20px 16px;
+    border-radius:20px;
+  }
+
+  .badge-title{
+    font-size:16px;
+    padding:10px 18px;
+  }
+
+  .subtitle{
+    font-size:10px;
+    letter-spacing:3px;
+  }
+
+  .userbar{
+    align-items:flex-start;
+  }
+
+  .avatar{
+    width:46px;
+    height:46px;
+  }
+
+  .point-value{
+    font-size:44px;
+  }
+
+  .claim-row{
+    grid-template-columns:1fr;
+    gap:9px;
+  }
+
+  .bonus{
+    font-size:14px;
+  }
+
+  .btn-claim{
+    width:100%;
+  }
 }
 </style>
 </head>
 
 <body>
+
+<div class="toast" id="toast"></div>
+
 <div class="wrap">
-<div class="card">
+  <div class="app">
 
-<div class="top">
-<img class="logo"
-src="https://plcl.me/images/7XJ4J.gif">
-<h1 class="title">Pelayanan <span>Resmi CERIABET</span></h1>
-<p class="desc">Isi data Anda dengan benar agar tim kami dapat membantu lebih cepat.</p>
-</div>
+    <div class="header">
+      <div class="badge-title">🎟️ KUPON DEPOSIT CERIA</div>
+      <div class="subtitle">CERIABET MEMBER REWARDS</div>
+    </div>
 
-<div class="box">
-<div class="section">LINK LOGIN RESMI</div>
-<a class="login" href="https://access.vpnceria.life/ceriabet-login" target="_blank">
-Klik di sini untuk login CERIABET
-</a>
-</div>
+    <div class="card">
 
-<div class="box">
-<img class="banner"
-src="https://plcl.me/images/t2Ndr.jpg">
-</div>
+      <div class="login" id="loginSection">
+        <div class="icon-round">👤</div>
+        <div class="title">Cek Kupon Anda</div>
+        <div class="desc">Masukkan USER ID CERIABET untuk melihat total kupon.</div>
 
-<div class="box">
-<div class="section">FORM BANTUAN MEMBER</div>
+        <input type="text" id="userIdInput" placeholder="Masukkan USER ID" autocomplete="off">
 
-<div class="form-group">
-<label class="label">User ID</label>
-<input type="text" id="userId" placeholder="Masukkan User ID Anda">
-<div class="error" id="userErr">User ID wajib diisi</div>
-</div>
+        <button class="btn-main" id="loginBtn" onclick="handleLogin()">
+          CEK KUPON SAYA
+        </button>
+      </div>
 
-<div class="form-group">
-<label class="label">Pilih Kendala</label>
-<div class="option-grid">
-<div class="option"><input type="checkbox" id="d" value="Deposit"><label for="d">Deposit</label></div>
-<div class="option"><input type="checkbox" id="w" value="Withdraw"><label for="w">Withdraw</label></div>
-<div class="option"><input type="checkbox" id="l" value="Lupa Password"><label for="l">Lupa Password</label></div>
-<div class="option"><input type="checkbox" id="k" value="Keluhan Lainnya"><label for="k">Keluhan Lainnya</label></div>
-</div>
-<div class="error" id="kelErr">Pilih minimal 1 kendala</div>
-</div>
+      <div class="dashboard" id="dashboardSection">
 
-<div class="form-group">
-<label class="label">Detail Kendala</label>
-<textarea id="detail" placeholder="Tuliskan kendala Anda"></textarea>
-</div>
+        <div class="userbar">
+          <div class="userleft">
+            <div class="avatar">👤</div>
+            <div>
+              <div class="member-name">Member</div>
+              <div class="member-id" id="memberId">ID: -</div>
+            </div>
+          </div>
 
-<div class="action">
-<button class="wa" id="send">Kirim ke WhatsApp</button>
-</div>
+          <button class="logout" onclick="logout()">Keluar</button>
+        </div>
 
-</div>
-</div>
+        <div class="point-card">
+          <div class="point-label">Total Kupon Anda</div>
+          <div class="point-value" id="pointValue">0</div>
+          <div class="point-unit">KUPON</div>
+        </div>
+
+        <div class="section-head">
+          <div class="gift">🎁</div>
+          <div>
+            <div class="section-title">Tabel Penukaran Bonus</div>
+            <div class="section-desc">Tombol claim terbuka jika kupon mencukupi.</div>
+          </div>
+        </div>
+
+        <div class="claim-list" id="claimList"></div>
+
+        <div class="copybox" id="copyBox"></div>
+
+        <div class="terms">
+          <h3>📌 Syarat & Ketentuan</h3>
+          <ul>
+            <li>Promo berlaku untuk seluruh member setia CERIABET.</li>
+            <li>Deposit minimal Rp10.000.</li>
+            <li>3x transaksi = 1 kupon.</li>
+            <li>Minimal 5 kupon untuk claim bonus.</li>
+            <li>Klaim maksimal 2x per hari.</li>
+            <li>Reset kupon setiap Kamis 00:00 WIB.</li>
+          </ul>
+
+          <div class="note">
+            ⚠️ Bonus tidak dapat digabung dengan Bonus New Member 20 - 100%.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer">
+      CERIABET © 2026 - Kupon Deposit Ceria
+    </div>
+
+  </div>
 </div>
 
 <script>
-const WA="https://access.vpnceria.life/whatsapp-joki-ceriabet"
-const LOGIN="https://access.vpnceria.life/ceriabet-login"
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzxqiwSnlezU69DFNGsumyaE7Giu_0oxnu3PydQMkL9GP7UabhDeZxA9oqa3FeBMEKN7Q/exec';
+const LIVE_CHAT_URL = 'https://access.vpnceria.life/ceriabet-livechat';
 
-document.getElementById("send").onclick=function(){
+let CURRENT_USER_ID = '';
+let CURRENT_POINTS = 0;
+let CLAIM_PROCESSING = false;
 
-const id=document.getElementById("userId").value.trim()
-const detail=document.getElementById("detail").value.trim()
-const cek=[...document.querySelectorAll('.option input:checked')].map(e=>e.value)
+const BONUS_LIST = [
+  { kupon: 5, bonus: 'Rp 10.000' },
+  { kupon: 15, bonus: 'Rp 20.000' },
+  { kupon: 20, bonus: 'Rp 25.000' },
+  { kupon: 25, bonus: 'Rp 30.000' },
+  { kupon: 30, bonus: 'Rp 50.000' },
+  { kupon: 50, bonus: 'Rp 100.000' }
+];
 
-document.getElementById("userErr").style.display=id?"none":"block"
-document.getElementById("kelErr").style.display=cek.length?"none":"block"
+function apiCall(params) {
+  return new Promise((resolve, reject) => {
+    const callbackName = 'cb_' + Date.now() + '_' + Math.floor(Math.random() * 99999);
 
-if(!id||!cek.length)return
+    params.callback = callbackName;
 
-const msg=`Halo Admin CERIABET 👋
+    const query = new URLSearchParams(params).toString();
+    const script = document.createElement('script');
 
-User ID: ${id}
-Kendala: ${cek.join(", ")}
-Detail: ${detail||"-"}
+    window[callbackName] = function(data) {
+      resolve(data);
+      delete window[callbackName];
+      script.remove();
+    };
 
-Link Login:
-${LOGIN}
+    script.onerror = function() {
+      reject(new Error('Gagal konek ke Apps Script'));
+      delete window[callbackName];
+      script.remove();
+    };
 
-Mohon dibantu ya kak 🙏`
-
-location.href=`https://api.whatsapp.com/send?phone=${WA}&text=${encodeURIComponent(msg)}`
+    script.src = APPS_SCRIPT_URL + '?' + query;
+    document.body.appendChild(script);
+  });
 }
+
+async function handleLogin() {
+  const input = document.getElementById('userIdInput');
+  const btn = document.getElementById('loginBtn');
+  const userId = input.value.trim();
+
+  if (!userId) {
+    toast('Masukkan USER ID terlebih dahulu');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.innerText = 'MEMUAT DATA...';
+
+  try {
+    const data = await apiCall({
+      action: 'getUser',
+      userId: userId
+    });
+
+    CURRENT_USER_ID = userId;
+    CURRENT_POINTS = Number(data.points || 0);
+
+    document.getElementById('loginSection').style.display = 'none';
+    document.getElementById('dashboardSection').style.display = 'block';
+    document.getElementById('memberId').innerText = 'ID: ' + userId;
+    document.getElementById('pointValue').innerText = CURRENT_POINTS.toLocaleString('id-ID');
+
+    renderClaimList();
+
+    if (data.found) {
+      toast('Data berhasil ditemukan');
+    } else {
+      toast('USER ID tidak ditemukan, kupon tampil 0');
+    }
+
+  } catch (err) {
+    toast('Koneksi gagal, cek link deploy Apps Script');
+  } finally {
+    btn.disabled = false;
+    btn.innerText = 'CEK KUPON SAYA';
+  }
+}
+
+function renderClaimList() {
+  const box = document.getElementById('claimList');
+  box.innerHTML = '';
+
+  BONUS_LIST.forEach(item => {
+    const enough = CURRENT_POINTS >= item.kupon;
+
+    const row = document.createElement('div');
+    row.className = 'claim-row ' + (enough ? 'active' : 'locked');
+
+    row.innerHTML = `
+      <div>
+        <span class="kupon-badge">${enough ? '⭐' : '🔒'} ${item.kupon} KUPON</span>
+      </div>
+      <div class="bonus">${item.bonus}</div>
+      <button 
+        class="btn-claim ${enough ? '' : 'locked'}"
+        ${enough ? '' : 'disabled'}
+        onclick="claimBonus(${item.kupon}, '${item.bonus}')"
+      >
+        ${enough ? 'CLAIM' : 'TERKUNCI'}
+      </button>
+    `;
+
+    box.appendChild(row);
+  });
+}
+
+async function claimBonus(kuponClaim, bonus) {
+  if (CLAIM_PROCESSING) return;
+
+  if (CURRENT_POINTS < kuponClaim) {
+    toast('Kupon belum cukup untuk claim bonus ini');
+    return;
+  }
+
+  CLAIM_PROCESSING = true;
+
+  const message =
+`saya ingin claim bonus kupon deposit ceria
+
+id : ${CURRENT_USER_ID}
+kupon awal : ${CURRENT_POINTS}
+kupon yang ingin di claim : ${kuponClaim}
+saldo rupiah : ${bonus}
+
+di bantu proses ya thank u`;
+
+  try {
+    await copyText(message);
+
+    const result = await apiCall({
+      action: 'claim',
+      userId: CURRENT_USER_ID,
+      kuponAwal: CURRENT_POINTS,
+      kuponClaim: kuponClaim,
+      bonus: bonus,
+      message: message
+    });
+
+    if (result.status === 'success') {
+      document.getElementById('copyBox').style.display = 'block';
+      document.getElementById('copyBox').innerText =
+        '✅ Pesan berhasil disalin. Silakan tempel di Live Chat:\n\n' + message;
+
+      toast('Claim masuk history dan pesan berhasil disalin');
+
+      setTimeout(() => {
+        window.location.href = LIVE_CHAT_URL;
+      }, 1200);
+
+    } else {
+      toast(result.message || 'Claim gagal diproses');
+    }
+
+  } catch (err) {
+    toast('Gagal claim, silakan coba lagi');
+  } finally {
+    CLAIM_PROCESSING = false;
+  }
+}
+
+async function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.style.position = 'fixed';
+  textarea.style.left = '-9999px';
+  document.body.appendChild(textarea);
+  textarea.focus();
+  textarea.select();
+  document.execCommand('copy');
+  textarea.remove();
+}
+
+function logout() {
+  CURRENT_USER_ID = '';
+  CURRENT_POINTS = 0;
+  CLAIM_PROCESSING = false;
+
+  document.getElementById('userIdInput').value = '';
+  document.getElementById('dashboardSection').style.display = 'none';
+  document.getElementById('loginSection').style.display = 'block';
+  document.getElementById('copyBox').style.display = 'none';
+  document.getElementById('copyBox').innerText = '';
+}
+
+function toast(text) {
+  const t = document.getElementById('toast');
+  t.innerText = text;
+  t.style.display = 'block';
+
+  setTimeout(() => {
+    t.style.display = 'none';
+  }, 3000);
+}
+
+document.getElementById('userIdInput').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') handleLogin();
+});
 </script>
 
 </body>
