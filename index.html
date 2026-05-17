@@ -205,32 +205,32 @@ src="https://plcl.me/images/VRWQZ.png">
 </div>
 
 <script>
-const WA="https://access.vpnceria.life/fu-whatsapp"
-const LOGIN="https://access.vpnceria.life/ceriabet-login"
+const WA_LINK = "https://access.vpnceria.life/fu-whatsapp"
+const LOGIN = "https://access.vpnceria.life/ceriabet-login"
 
-document.getElementById("send").onclick=function(){
+document.getElementById("send").onclick = function(){
 
-const id=document.getElementById("userId").value.trim()
-const detail=document.getElementById("detail").value.trim()
-const cek=[...document.querySelectorAll('.option input:checked')].map(e=>e.value)
+  const id = document.getElementById("userId").value.trim()
+  const detail = document.getElementById("detail").value.trim()
+  const cek = [...document.querySelectorAll('.option input:checked')].map(e => e.value)
 
-document.getElementById("userErr").style.display=id?"none":"block"
-document.getElementById("kelErr").style.display=cek.length?"none":"block"
+  document.getElementById("userErr").style.display = id ? "none" : "block"
+  document.getElementById("kelErr").style.display = cek.length ? "none" : "block"
 
-if(!id||!cek.length)return
+  if(!id || !cek.length) return
 
-const msg=`Halo Admin CERIABET 👋
+  const msg = `Halo Admin CERIABET 👋
 
 User ID: ${id}
 Kendala: ${cek.join(", ")}
-Detail: ${detail||"-"}
+Detail: ${detail || "-"}
 
 Link Login:
 ${LOGIN}
 
 Mohon dibantu ya kak 🙏`
 
-location.href = `${WA_LINK}?text=${encodeURIComponent(msg)}`
+  location.href = `${WA_LINK}?text=${encodeURIComponent(msg)}`
 }
 </script>
 
