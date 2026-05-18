@@ -230,7 +230,10 @@ ${LOGIN}
 
 Mohon dibantu ya kak 🙏`
 
-  location.href = `${WA_LINK}?text=${encodeURIComponent(msg)}`
+  const finalLink = WA_LINK + 
+    "?text=" + encodeURIComponent(msg)
+
+  window.open(finalLink, "_blank")
 }
 </script>
 
